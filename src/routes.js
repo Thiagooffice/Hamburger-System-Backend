@@ -5,6 +5,7 @@ import ProductController from "./app/controllers/ProductController"
 import SessionController from "./app/controllers/SessionController"
 
 import UserController from "./app/controllers/UserController"
+import CategoryController from "./app/controllers/CategoryController"
 
 import authMiddleware from "./app/middlewares/auth"
 
@@ -18,7 +19,9 @@ routes.use(authMiddleware) // sera chamado por todas as rotas a baixo
 routes.post("/sessions", SessionController.store)
 
 routes.post("/products", upload.single("file"), ProductController.store)
-
 routes.get("/products", ProductController.index)
+
+routes.post("/categories", CategoryController.store)
+routes.get("/categories", CategoryController.index)
 
 export default routes
