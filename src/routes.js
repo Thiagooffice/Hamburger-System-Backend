@@ -14,9 +14,9 @@ const routes = new Router()
 
 routes.post("/users", UserController.store)
 
-routes.use(authMiddleware) // sera chamado por todas as rotas a baixo
-
 routes.post("/sessions", SessionController.store)
+
+routes.use(authMiddleware) // sera chamado por todas as rotas a baixo
 
 routes.post("/products", upload.single("file"), ProductController.store)
 routes.get("/products", ProductController.index)

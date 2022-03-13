@@ -9,7 +9,7 @@ export default (request, response, next) => {
       error: "Token not provided",
     })
   }
-  //   console.log(authToken)
+  // console.log(authToken)
 
   const token = authToken.split(" ")[1]
 
